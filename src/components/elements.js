@@ -4,6 +4,7 @@ const elements = () => ({
   allArrays: document.getElementById('allArrays'),
   bubbleSortBtn: document.getElementById('Bubble Sort'),
   insertionSortBtn: document.getElementById('Insert Sort'),
+  quickSortBtn: document.getElementById('Quick Sort'),
 });
 
 export default elements;
