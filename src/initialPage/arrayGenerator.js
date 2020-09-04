@@ -5,9 +5,8 @@ const arrayGen = () => {
   const arrays = document.createElement('div');
   arrays.id = 'allArrays';
   arrays.classList = 'flex';
-  console.log(arrayInput);
+
   const number = arrayInput.value;
-  console.log('here');
   for (let i = 0; i < number; i++) {
     const array = document.createElement('div');
     array.classList = 'w-8 bg-red-800 h-48 border-yellow-800 border-2 ';
