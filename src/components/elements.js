@@ -1,2 +1,5 @@
 const elements = {
-  root: document.getElementById('root')
+  root: document.getElementById('root'),
+};
+
+export default { elements };
