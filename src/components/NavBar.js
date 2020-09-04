@@ -11,7 +11,7 @@ const genNavbar = () => {
     sortDiv.appendChild(button(sort, 'mr-8'));
   });
   navBar.appendChild(sortDiv);
-  navBar.appendChild(inputRange('Array Size:', 'grid'));
+  navBar.appendChild(inputRange('Array Size:', 'grid', 'array'));
   return navBar;
 };
 

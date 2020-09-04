@@ -1,6 +1,7 @@
-const inputRange = (label, classesLab, classesInp = '') => {
+const inputRange = (label, classesLab, id = '', classesInp = '') => {
   const input = document.createElement('input');
   input.type = 'range';
+  input.id = id;
   input.min = '0';
   input.max = '100';
   input.classList = classesInp;

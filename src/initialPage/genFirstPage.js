@@ -1,9 +1,11 @@
-import allElements from '../components/elements';
+import elements from '../components/elements';
 import genNavBar from '../components/NavBar';
+import arrayGen from './arrayGenerator';
 
-const { elements: { root } } = allElements;
+const { root } = elements();
 const exec = () => {
   root.appendChild(genNavBar());
+  root.appendChild(arrayGen());
 };
 
 export default { exec };
