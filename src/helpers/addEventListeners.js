@@ -4,7 +4,7 @@ import elements from '../components/elements';
 const addEventListeners = () => {
   console.log('here');
   const { arrayInput } = elements();
-  const { cleanArray } = helpers;
+  const { cleanArray, shuffleArray } = helpers;
   arrayInput.addEventListener('change', cleanArray);
 };
 

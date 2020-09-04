@@ -10,5 +10,19 @@ const cleanArray = () => {
     array.innerHTML = `<h1 class="text-2xl"> ${i} </h1>`;
     allArrays.appendChild(array);
   }
+  shuffleArray();
 };
-export default { cleanArray };
+
+const shuffleArray = () => {
+  const { allArrays, arrayInput } = elements();
+  const number = arrayInput.value;
+  console.log(allArrays.childNodes);
+  console.log('shuffle');
+  for (let i = number - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = allArrays.childNodes[i].innerText;
+    allArrays.childNodes[i].innerText = allArrays.childNodes[j].innerText;
+    allArrays.childNodes[j].innerText = temp;
+  }
+};
+export default { cleanArray, shuffleArray };
