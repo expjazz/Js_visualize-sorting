@@ -20,6 +20,10 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const swap = async (one, two, arr) => {
   await sleep(3000);
+  const temp2 = `${(arr.childNodes[one].innerText * 10)}px`;
+
+  arr.childNodes[one].style.height = `${(arr.childNodes[two].innerText * 10)}px`;
+  arr.childNodes[two].style.height = temp2;
   const temp = arr.childNodes[one].innerText;
   arr.childNodes[one].innerText = arr.childNodes[two].innerText;
   arr.childNodes[two].innerText = temp;

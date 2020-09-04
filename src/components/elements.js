@@ -3,6 +3,7 @@ const elements = () => ({
   arrayInput: document.getElementById('array'),
   allArrays: document.getElementById('allArrays'),
   bubbleSortBtn: document.getElementById('Bubble Sort'),
+  insertionSortBtn: document.getElementById('Insert Sort'),
 });
 
 export default elements;
