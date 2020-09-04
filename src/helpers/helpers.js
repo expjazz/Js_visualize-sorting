@@ -6,6 +6,10 @@ const shuffleArray = () => {
 
   for (let i = number - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
+    const temp2 = `${(allArrays.childNodes[i].innerText * 10)}px`;
+
+    allArrays.childNodes[i].style.height = `${(allArrays.childNodes[j].innerText * 10)}px`;
+    allArrays.childNodes[j].style.height = temp2;
     const temp = allArrays.childNodes[i].innerText;
     allArrays.childNodes[i].innerText = allArrays.childNodes[j].innerText;
     allArrays.childNodes[j].innerText = temp;
