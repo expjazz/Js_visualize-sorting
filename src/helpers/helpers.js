@@ -16,8 +16,7 @@ const cleanArray = () => {
 const shuffleArray = () => {
   const { allArrays, arrayInput } = elements();
   const number = arrayInput.value;
-  console.log(allArrays.childNodes);
-  console.log('shuffle');
+
   for (let i = number - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     const temp = allArrays.childNodes[i].innerText;
@@ -25,4 +24,10 @@ const shuffleArray = () => {
     allArrays.childNodes[j].innerText = temp;
   }
 };
-export default { cleanArray, shuffleArray };
+
+const swap = (one, two, arr) => {
+  const temp = arr[one];
+  arr[one] = arr[two];
+  arr[two] = temp;
+};
+export default { cleanArray, shuffleArray, swap };
