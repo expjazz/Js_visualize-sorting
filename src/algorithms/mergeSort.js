@@ -1,38 +1,56 @@
+/* eslint-disable radix */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-use-before-define */
 import helpers from '../helpers/helpers';
 
-const helper = (left, right) => {
-  const sorted = new Array((left.length + right.length));
-  let k = 0;
-  let i = 0;
-  let j = 0;
-  while (i < left.length && j < right.length) {
-    if (left[i] < right[j]) {
-      sorted[k] = left[i];
+const mergeSort = async (arr) => {
+  const aux = [];
+  arr.forEach((x) => aux.push(x.cloneNode(true)));
+
+  await helperSort(arr, 0, arr.length - 1, aux);
+
+  return arr;
+};
+
+const helperSort = async (arr, start, end, aux) => {
+  if (start === end) return;
+  const mid = Math.floor((start + end) / 2);
+  helperSort(aux, start, mid, arr);
+  helperSort(aux, mid + 1, end, arr);
+
+  await doMerge(arr, start, mid, end, aux);
+};
+
+const doMerge = async (arr, start, mid, end, aux) => {
+  const { swap } = helpers;
+  const merge = true;
+  let k = start;
+  let i = start;
+  let j = mid + 1;
+  while (i <= mid && j <= end) {
+    if (parseInt(aux[i].innerText) <= parseInt(aux[j].innerText)) {
+      await swap(k, parseInt(aux[i].innerText), arr, merge);
+      // arr[k] = aux[i];
       i += 1;
     } else {
-      sorted[k] = right[j];
+      await swap(k, parseInt(aux[j].innerText), arr, merge);
+      // arr[k] = aux[j];
       j += 1;
     }
     k += 1;
   }
-  while (i < left.length) {
-    sorted[k] = left[i];
+  while (i <= mid) {
+    await swap(k, parseInt(aux[i].innerText), arr, merge);
+    // arr[k] = aux[i];
     i += 1;
     k += 1;
   }
-  while (i < right.length) {
-    sorted[k] = left[j];
+  while (j <= end) {
+    await swap(k, parseInt(aux[j].innerText), arr, merge);
+    // arr[k] = aux[j];
     j += 1;
     k += 1;
   }
-};
-
-const mergeSort = (arr) => {
-  if (arr.length === 1) return arr;
-  const middle = Math.floor(arr.length / 2);
-  const left = arr.slice(0, middle);
-  const right = arr.slice(middle);
-  return helper(mergeSort(left), mergeSort(right));
 };
 
 export default mergeSort;

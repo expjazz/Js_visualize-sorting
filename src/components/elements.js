@@ -5,6 +5,7 @@ const elements = () => ({
   bubbleSortBtn: document.getElementById('Bubble Sort'),
   insertionSortBtn: document.getElementById('Insert Sort'),
   quickSortBtn: document.getElementById('Quick Sort'),
+  mergeSortBtn: document.getElementById('Merge Sort'),
 });
 
 export default elements;
