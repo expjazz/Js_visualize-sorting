@@ -11,7 +11,7 @@ const arrayGen = () => {
     const array = document.createElement('div');
     array.style.height = `${(i * 10)}px`;
 
-    array.classList = 'w-8 bg-red-800 border-yellow-800 border-2 ';
+    array.classList = 'w-8 bg-red-300 border-yellow-800 border-2 ';
     array.innerHTML = `<h1 class="text-2xl"> ${i} </h1>`;
     arrays.appendChild(array);
   }
