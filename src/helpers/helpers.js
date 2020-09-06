@@ -18,11 +18,15 @@ const shuffleArray = () => {
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const swap = async (one, two, arr, merge = false) => {
+const swap = async (one, two, arr, merge = false, text = false) => {
   await sleep(40);
-  console.log(one);
   if (merge) {
-    arr[one].style.height = `${two * 10}px`;
+    if (text) {
+      arr[one] = two;
+      return '';
+    }
+    if (text) return '';
+    arr[one].style.height = `${parseInt(two) * 10}px`;
     arr[one].innerText = two;
   }
   if (merge) return '';
