@@ -1,6 +1,7 @@
 const elements = () => ({
   root: document.getElementById('root'),
   arrayInput: document.getElementById('array'),
+  hiddenArrays: document.getElementById('hiddenArr'),
   allArrays: document.getElementById('allArrays'),
   bubbleSortBtn: document.getElementById('Bubble Sort'),
   insertionSortBtn: document.getElementById('Insert Sort'),

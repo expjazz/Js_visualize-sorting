@@ -5,7 +5,10 @@ import arrayGen from './arrayGenerator';
 const { root } = elements();
 const exec = () => {
   root.appendChild(genNavBar());
-  root.appendChild(arrayGen());
+  const { arrays, hidden } = arrayGen();
+  console.log(arrayGen());
+  root.appendChild(arrays);
+  root.appendChild(hidden);
 };
 
 export default { exec };
