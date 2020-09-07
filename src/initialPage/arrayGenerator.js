@@ -1,7 +1,7 @@
 import elements from '../components/elements';
 
 const arrayGen = () => {
-  const { arrayInput, hiddenArr } = elements();
+  const { arrayInput } = elements();
   const arrays = document.createElement('div');
   arrays.id = 'allArrays';
   arrays.classList = 'flex';
@@ -16,6 +16,7 @@ const arrayGen = () => {
     array.innerHTML = `<h1 class="text-2xl"> ${i} </h1>`;
     const clone = document.createElement('div');
     clone.style.height = `${(i * 10)}px`;
+    clone.innerHTML = `<h1>${i}</h1>`;
     clone.classList = 'hidden';
     hidden.appendChild(clone);
     arrays.appendChild(array);

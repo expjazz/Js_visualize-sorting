@@ -1,7 +1,7 @@
 import elements from '../components/elements';
 
 const shuffleArray = () => {
-  const { allArrays, arrayInput } = elements();
+  const { allArrays, arrayInput, hiddenArrays } = elements();
   const number = arrayInput.value;
 
   for (let i = number - 1; i > 0; i--) {
@@ -13,19 +13,19 @@ const shuffleArray = () => {
     const temp = allArrays.childNodes[i].innerText;
     allArrays.childNodes[i].innerText = allArrays.childNodes[j].innerText;
     allArrays.childNodes[j].innerText = temp;
+    hiddenArrays.childNodes[i].style.height = `${(hiddenArrays.childNodes[j].innerText * 10)}px`;
+    hiddenArrays.childNodes[j].style.height = temp2;
+    const temp3 = hiddenArrays.childNodes[i].innerText;
+    hiddenArrays.childNodes[i].innerText = hiddenArrays.childNodes[j].innerText;
+    hiddenArrays.childNodes[j].innerText = temp3;
   }
 };
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const swap = async (one, two, arr, merge = false, text = false) => {
-  await sleep(40);
+  await sleep(1000);
   if (merge) {
-    if (text) {
-      arr[one] = two;
-      return '';
-    }
-    if (text) return '';
     arr[one].style.height = `${parseInt(two) * 10}px`;
     arr[one].innerText = two;
   }
@@ -39,14 +39,19 @@ const swap = async (one, two, arr, merge = false, text = false) => {
   arr.childNodes[two].innerText = temp;
 };
 const cleanArray = () => {
-  const { allArrays, arrayInput } = elements();
+  const { allArrays, arrayInput, hiddenArrays } = elements();
   const number = arrayInput.value;
   allArrays.innerHTML = '';
+  hiddenArrays.innerHTML = '';
   for (let i = 0; i < number; i++) {
     const array = document.createElement('div');
     array.classList = 'w-8 bg-red-400 h-48 border-yellow-800 border-2 ';
     array.innerHTML = `<h1 class="text-2xl"> ${i} </h1>`;
     allArrays.appendChild(array);
+    const hid = document.createElement('hid');
+    hid.classList = 'hidden';
+    hid.innerHTML = `<h1 class="text-2xl"> ${i} </h1>`;
+    hiddenArrays.appendChild(hid);
   }
   shuffleArray();
 };
