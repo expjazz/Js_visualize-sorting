@@ -8,6 +8,7 @@ const bubbleSort = async (arr) => {
     for (let i = 0; i < arr.childNodes.length - 1; i++) {
       if (parseInt(arr.childNodes[i].innerText) > parseInt(arr.childNodes[i + 1].innerText)) {
         sorted = false;
+        // eslint-disable-next-line no-await-in-loop
         await swap(i, i + 1, arr);
       }
     }

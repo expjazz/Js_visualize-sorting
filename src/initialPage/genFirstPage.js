@@ -6,7 +6,6 @@ const { root } = elements();
 const exec = () => {
   root.appendChild(genNavBar());
   const { arrays, hidden } = arrayGen();
-  console.log(arrayGen());
   root.appendChild(arrays);
   root.appendChild(hidden);
 };
