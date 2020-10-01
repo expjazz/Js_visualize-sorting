@@ -5,7 +5,7 @@ import insertionSort from '../algorithms/insertSort';
 import quickSort from '../algorithms/quickSort';
 import mergeSort from '../algorithms/mergeSort';
 
-const addEventListeners = () => {
+const sortingListeners = () => {
   const {
     arrayInput, bubbleSortBtn, allArrays, insertionSortBtn, quickSortBtn, mergeSortBtn,
   } = elements();
@@ -17,4 +17,4 @@ const addEventListeners = () => {
   mergeSortBtn.addEventListener('click', () => mergeSort(allArrays.childNodes));
 };
 
-export default addEventListeners;
+export default sortingListeners;

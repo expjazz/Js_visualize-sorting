@@ -7,6 +7,8 @@ const elements = () => ({
   insertionSortBtn: document.getElementById('Insert Sort'),
   quickSortBtn: document.getElementById('Quick Sort'),
   mergeSortBtn: document.getElementById('Merge Sort'),
+  sortingBtn: document.getElementById('Sorting Algorithms'),
+  binarySearchBtn: document.getElementById('Binary Search'),
 });
 
 export default elements;
