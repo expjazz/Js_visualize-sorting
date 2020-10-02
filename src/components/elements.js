@@ -9,6 +9,7 @@ const elements = () => ({
   mergeSortBtn: document.getElementById('Merge Sort'),
   sortingBtn: document.getElementById('Sorting Algorithms'),
   binarySearchBtn: document.getElementById('Binary Search'),
+  genericNav: document.getElementById('genericNav'),
 });
 
 export default elements;
