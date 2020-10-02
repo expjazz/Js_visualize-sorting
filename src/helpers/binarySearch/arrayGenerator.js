@@ -1,3 +1,5 @@
+import pointerGen from '../../components/binarySearch/pointer';
+
 export default function arrayGenerator() {
   const container = document.createElement('div');
   container.classList = 'arrayNumber flex p-8 m-8';
