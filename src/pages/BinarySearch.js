@@ -1,4 +1,4 @@
-import navbar from '../components/common/genericNavBar';
+import navbar from '../components/binarySearch/navBar';
 import elements from '../components/elements';
 
 const pageBinarySearch = () => {
