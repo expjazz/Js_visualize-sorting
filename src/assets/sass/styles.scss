@@ -1,3 +1,18 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.arrayNumber {
+    background-image: linear-gradient(#ffb1bb, #ffb1bb),
+                      linear-gradient(#ffb1bb, #ffb1bb),
+                      linear-gradient(#ffb1bb, #ffb1bb),
+                      linear-gradient(#ffb1bb, #ffb1bb);
+  
+    background-repeat: no-repeat;
+    background-size: 8px 3px;
+    background-position: top left, top right, bottom left, bottom right;
+  
+    border: solid #ffb1bb;
+    border-width: 0 3px;
+  
+}
